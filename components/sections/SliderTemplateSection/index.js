@@ -1,0 +1,1 @@
+export { SliderTemplateSection } from './SliderTemplateSection';

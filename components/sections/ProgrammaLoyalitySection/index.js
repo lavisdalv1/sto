@@ -1,0 +1,1 @@
+export { ProgrammaLoyalitySection } from './ProgrammaLoyalitySection';

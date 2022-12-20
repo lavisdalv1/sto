@@ -1,0 +1,1 @@
+export { AboutUsTemlateSection } from './AboutUsTemlateSection';

@@ -1,0 +1,1 @@
+export { BrendsSection } from './BrendsSection';
