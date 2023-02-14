@@ -1,8 +1,0 @@
-User-Agent: *
-Disallow: /admin/*
-Disallow: /staging/*
-Disallow: /online/visits/
-Disallow: /licence_agreement
-Disallow: /user_agreement
-Disallow: /info
-sitemap:  https://online-zapis.com/sitemap.xml

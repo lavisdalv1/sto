@@ -1,1 +1,0 @@
-export { MaterialAccountingSection } from './MaterialAccountingSection';

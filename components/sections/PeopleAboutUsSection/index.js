@@ -1,1 +1,0 @@
-export { PeopleAboutUsSection } from './PeopleAboutUsSection';

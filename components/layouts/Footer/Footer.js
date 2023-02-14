@@ -1,145 +1,109 @@
-import { Box, Container, Flex, Grid, Text } from '@chakra-ui/react';
-import {
-  TelegramShareButton,
-  ViberShareButton,
-  InstapaperShareButton,
-} from 'next-share';
-// import { useRouter } from 'next/router';
-import MainLink from '../../common/MainLink';
-import {
-  LogoAndText,
-  MobLogoAndTextIocn,
-  ViberIcon,
-  TelegramIcon,
-  InstIcon,
-} from '../../icons';
-import {
-  BePaidIcon,
-  VisaIcon,
-  VisaSecurIcon,
-  MasterCard,
-} from '../../icons/cards';
+import { Box, Container, Flex, Text } from '@chakra-ui/react';
 
+import MainLink from '../../common/MainLink';
+import NextLink from 'next/link';
+import {
+  FullscreenControl,
+  Map,
+  YMaps,
+  ZoomControl,
+  Placemark,
+  RouteButton,
+  Polyline,
+} from '@pbe/react-yandex-maps';
 import Heading from '../../common/Heading';
 
+import Image from 'next/image';
 export const Footer = () => {
-  // const router = useRouter();
-
   return (
-    <Box bg="#F5F5F5" overflow={{ base: 'initial', sm: 'hidden' }}>
+    <Box bg="#E2E8F0">
       <Container
         pt={{ base: '38px', sm: '55px' }}
         pb={{ base: '21px', sm: '37px' }}
-        position="relative"
+        display="flex"
+        flexDirection={{ base: 'column', sm: 'row' }}
       >
-        <Flex justifyContent="space-between" mb="30px" alignItems="center">
-          <LogoAndText display={{ base: 'none', sm: 'block' }} />
-          <MobLogoAndTextIocn display={{ base: 'block', sm: 'none' }} />
-        </Flex>
-
-        <Heading variant="h3" mb="8px">
-          footer
-          {/* {footer.headings.solutions} */}
-        </Heading>
-        <Grid
-          templateRows={{ base: '1fr ' }}
-          templateColumns={{
-            base: 'repeat(1, 1fr)',
-            sm: 'repeat(3, 1fr)',
-            md: 'repeat(4, 1fr)',
-          }}
-          gap={3}
-          mb="20px"
-        >
-          items
-          {/* {footer.solutions.map((block, index) => (
-            <Flex key={index} maxW="269px" flexDirection="column">
-              {block.block.map((link, index) => (
-                <Box
-                  fontSize={{ base: 'xxs', sm: '4xs', md: 'sm' }}
-                  key={index}
-                  m="3px 0px"
-                  variant="footerLink"
-                >
-                  {link.label}
-                </Box>
-              ))}
-            </Flex>
-          ))} */}
-        </Grid>
-
-        <Grid
-          templateColumns={{
-            base: 'repeat(1, 1fr)',
-            sm: '2fr 1fr',
-            md: 'repeat(2, 1fr)',
-          }}
-          gap={3}
-          templateAreas={{ base: `"info" "useFull"`, sm: `"useFull info"` }}
-        >
-          <Box gridArea="useFull">
-            <Heading variant="h3" mb="8px">
-              {/* {footer.headings.useful} */}
-              head
-            </Heading>
-            items
-            {/* {footer.useFulLink.map((link, index) => (
-              <Flex key={index} flexDirection="column">
-                <MainLink
-                  m="3px 0px"
-                  color="blue.blueV1"
-                  variant="footerLink"
-                  href={link.link}
-                >
-                  {link.label}
-                </MainLink>
-              </Flex>
-            ))} */}
+        <Box>
+          <Text mb="10px">Наше место и схема проезда</Text>
+          <Box borderRadius="16px" overflow="hidden" w="320px" h="240px">
+            <YMaps
+              query={{
+                apikey: 'c39a16dc-3d81-4fda-abde-d3e759983279',
+                lang: 'ru_RU',
+              }}
+            >
+              <Map
+                defaultState={{
+                  center: [52.459984, 30.94507],
+                  zoom: 15,
+                }}
+              >
+                <Placemark geometry={[52.459984, 30.94507]} />
+                <FullscreenControl />
+                <ZoomControl
+                  options={{ position: { right: 10, bottom: 27 } }}
+                />
+                <Polyline
+                  geometry={[
+                    [52.462137, 30.946479],
+                    [52.461165, 30.9477],
+                    [52.460421, 30.946234],
+                    [52.460002, 30.946689],
+                    [52.45946, 30.945554],
+                    [52.459901, 30.94504],
+                  ]}
+                  options={{
+                    balloonCloseButton: false,
+                    strokeColor: '#3641fe',
+                    strokeWidth: 4,
+                    strokeOpacity: 0.5,
+                  }}
+                />
+              </Map>
+            </YMaps>
           </Box>
-          <Box gridArea="info">
-            <Heading variant="h3" mb="8px">
-              head
-              {/* {footer.headings.info} */}
-            </Heading>
-            items
-            {/* {footer.info.map((link, index) => (
-              <Flex key={index} flexDirection="column">
-                {index === 0 ? (
-                  <MainLink href={link?.href} m="3px 0px" variant="footerLink">
-                    {link.label}
-                  </MainLink>
-                ) : (
-                  <MainLink
-                    locale={false}
-                    href={
-                      router.locale === 'ru' ||
-                      router.locale === 'be' ||
-                      router.locale === 'ua'
-                        ? link?.href
-                        : `${link?.href_en}`
-                    }
-                    m="3px 0px"
-                    variant="footerLink"
-                  >
-                    {link.label}
-                  </MainLink>
-                )}
-            </Flex>
-            ))} */}
-          </Box>
-        </Grid>
-        <Flex
-          flexWrap="wrap"
-          justifyContent={{ base: 'space-evenly', sm: 'space-between' }}
-          alignItems="center"
-          maxW="380px"
-          mt="56px"
+        </Box>
+        <Box
+          whiteSpace="pre-wrap"
+          ml={{ base: '0px', sm: '60px' }}
+          mt={{ base: '20px', sm: '0px' }}
+          display="flex"
+          flexDirection="column"
+          justifyContent="flex-end"
         >
-          <VisaIcon />
-          <VisaSecurIcon />
-          <MasterCard />
-          <BePaidIcon />
-        </Flex>
+          <Flex mb="10px">
+            <Image src="/images/map.png" width={20} height={20} />
+            <Text fontWeight={600} ml="10px">
+              Адресс:
+            </Text>
+            <NextLink
+              href={`https://yandex.by/maps/155/gomel/?ll=30.945379%2C52.459588&mode=routes&rtext=~52.459973%2C30.944967&rtt=auto&ruri=~&z=18.36`}
+              target="_blank"
+            >
+              г.Гомель Текстильная улица, 10к3
+            </NextLink>
+          </Flex>
+          <Flex mb="10px">
+            <Image src="/images/mobile.svg" width={20} height={20} />
+            <Text fontWeight={600} ml="10px">
+              Телефон:{' '}
+            </Text>
+            <NextLink href={`tel:+375333593275`}>+375 33 359 32 75</NextLink>
+          </Flex>
+
+          <Flex mb="10px">
+            <Image src="/images/instagram.svg" width={20} height={20} />
+            <Text fontWeight={600} ml="10px">
+              Instagram:{' '}
+            </Text>
+            <NextLink
+              href={`https://www.instagram.com/eagle_gomel/`}
+              target="_blank"
+            >
+              eagle_gomel
+            </NextLink>
+          </Flex>
+        </Box>
       </Container>
     </Box>
   );

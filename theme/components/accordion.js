@@ -3,9 +3,10 @@ export const AccordionStyles = {
   baseStyle: {},
   sizes: {},
   variants: {
-    aboutOnlineZapis: {
+    accord: {
       button: {
-        p: { base: '5px 33px', md: '0px 0px' },
+        // p: { base: '5px 33px', md: '0px 0px' },
+        p: '5px 0px 5px 0px',
         display: 'flex',
         m: '0 auto',
         maxWidth: '1216px',
@@ -23,17 +24,17 @@ export const AccordionStyles = {
         _last: { mb: 0 },
       },
       panel: {
-        border: '1px solid',
-        borderColor: 'sub.v2',
+        // border: '1px solid',
+        // borderColor: 'sub.v2',
         w: '100%',
         color: 'sub.v1',
         fontSize: 'md',
         m: '15px 0',
-        p: {
-          base: '17px 33px',
-          md: '27px calc((100vw - 1216px) / 2) 27px calc((100vw - 1216px) / 2)',
-          lg: '27px 122px 27px 109px',
-        },
+        // p: {
+        //   base: '17px 33px',
+        //   md: '27px calc((100vw - 1216px) / 2) 27px calc((100vw - 1216px) / 2)',
+        //   lg: '27px 122px 27px 109px',
+        // },
       },
     },
   },

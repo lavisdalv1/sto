@@ -1,1 +1,0 @@
-export { TelefonySection } from './TelefonySection';

@@ -13,15 +13,15 @@ import MainLink from '../../../common/MainLink';
 import NextLink from 'next/link';
 
 import { MobLogoAndTextIocn, LogoTabletIcon, CloseIcon } from '../../../icons';
-import Links from './Links';
-import { constants } from '../../../../constants';
+// import Links from './Links';
+// import { constants } from '../../../../constants';
 
 export const TabletAndMobileMenu = ({ onClose, isOpen, ...props }) => {
   const closeModal = useCallback(() => onClose(), [onClose]);
 
   return (
     <>
-      <Box
+      {/* <Box
         {...props}
         position="absolute"
         display={isOpen ? 'block' : 'none'}
@@ -122,7 +122,7 @@ export const TabletAndMobileMenu = ({ onClose, isOpen, ...props }) => {
             </AccordionItem>
           </Accordion>
         </Box>
-      </Box>
+      </Box> */}
       {/* <Modal {...props} bg="blue.blueV1">
         <ModalContent maxW="100vw" m="0" h="100vh">
           <ModalHeader>

@@ -1,1 +1,0 @@
-export { BrendsMastresSection } from './BrendsMastresSection';
