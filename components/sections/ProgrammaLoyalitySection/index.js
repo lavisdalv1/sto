@@ -1,1 +1,0 @@
-export { ProgrammaLoyalitySection } from './ProgrammaLoyalitySection';

@@ -1,10 +1,18 @@
+import { Montserrat } from '@next/font/google';
+// Georama
+export const myFont = Montserrat({
+  weight: '400',
+  style: ['normal', 'italic'],
+  weight: ['400', '500'],
+});
+
 export default {
   fonts: {
-    body: 'Mazzard M, Mazzard H, Mazzard L',
+    body: myFont.style.fontFamily,
 
-    heading: 'Mazzard M, Mazzard H, Mazzard L',
+    heading: myFont.style.fontFamily,
 
-    mono: 'Mazzard M, Mazzard H, Mazzard L',
+    mono: myFont.style.fontFamily,
   },
   fontSizes: {
     '4xs': '10px',

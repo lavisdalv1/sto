@@ -7,4 +7,17 @@ module.exports = withBundleAnalyzer({
   experimental: {
     appDir: true,
   },
+  images: {
+    domains: ['media.graphassets.com'],
+  },
+  // images: {
+  //   remotePatterns: [
+  //     {
+  //       protocol: 'https',
+  //       hostname: 'media.graphassets.com',
+  //       port: '',
+  //       // pathname: '/my-bucket/**',
+  //     },
+  //   ],
+  // },
 });

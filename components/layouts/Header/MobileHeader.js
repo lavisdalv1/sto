@@ -5,7 +5,6 @@ import NextLink from 'next/link';
 import MainLink from '../../common/MainLink';
 import { LogoAndText, BurgerIcon, MobLogoAndTextIocn } from '../../icons';
 import TabletAndMobileMenu from './menus/TabletAndMobileMenu';
-import { constants } from '../../../constants';
 
 export const MobileHeader = () => {
   // const { isOpen, onOpen, onClose } = useDisclosure();
@@ -22,7 +21,7 @@ export const MobileHeader = () => {
       justifyContent="space-between"
       display={{ base: 'flex', md: 'none' }}
     >
-      <MainLink href="/" display={{ base: 'none', sm: 'block' }}>
+      {/* <MainLink href="/" display={{ base: 'none', sm: 'block' }}>
         <LogoAndText />
       </MainLink>
       <MainLink href="/" display={{ base: 'block', sm: 'none' }}>
@@ -48,7 +47,7 @@ export const MobileHeader = () => {
         </MainLink>
         <BurgerIcon onClick={openMenu} />
       </Flex>
-      <TabletAndMobileMenu isOpen={show} onClose={closeMenu} />
+      <TabletAndMobileMenu isOpen={show} onClose={closeMenu} /> */}
     </Flex>
   );
 };

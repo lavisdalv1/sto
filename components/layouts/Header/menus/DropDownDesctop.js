@@ -2,7 +2,6 @@ import { Box, SimpleGrid } from '@chakra-ui/react';
 
 import Heading from '../../../common/Heading';
 import { CloseIcon } from '../../../icons';
-import Links from './Links';
 
 export const DropDownDesctop = ({ setShow, ...props }) => {
   return (
@@ -27,7 +26,7 @@ export const DropDownDesctop = ({ setShow, ...props }) => {
       </Heading>
 
       <SimpleGrid columns={2} spacingY={8} spacingX="25px" w="890px">
-        <Links onClose={setShow} />
+        {/* <Links onClose={setShow} /> */}
       </SimpleGrid>
     </Box>
   );

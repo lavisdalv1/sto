@@ -1,17 +1,9 @@
-import { Flex, Button, Menu, MenuButton, MenuList } from '@chakra-ui/react';
-import { useState } from 'react';
-import NextLink from 'next/link';
+import { Flex, Avatar } from '@chakra-ui/react';
 
-import MainLink from '../../common/MainLink';
-import { LogoAndText, ArrowLink } from '../../icons';
-import DropDownDesctop from './menus/DropDownDesctop';
-import { constants } from '../../../constants';
+import NextLink from 'next/link';
+import Image from 'next/image';
 
 export const DesctopHeader = () => {
-  const [state, setState] = useState(0);
-
-  console.log(state);
-
   return (
     <Flex
       h="90px"
@@ -19,11 +11,12 @@ export const DesctopHeader = () => {
       justifyContent="space-between"
       display={{ base: 'none', md: 'flex' }}
       position="relative"
-      bg="red"
     >
-      <div onClick={() => setState((prev) => prev + 1)}>button</div>
-      <div>{state}</div>
-      head
+      <Avatar src="/images/eagle.jpg" />
+      <Flex>
+        <Image src="/images/mobile.svg" width={20} height={20} />
+        <NextLink href={`tel:+375333593275`}>+375 33 359 32 75</NextLink>
+      </Flex>
     </Flex>
   );
 };
