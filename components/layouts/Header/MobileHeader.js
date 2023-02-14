@@ -1,18 +1,14 @@
 import { useState } from 'react';
-import { Flex, Button, useDisclosure } from '@chakra-ui/react';
+import { Flex, useDisclosure, Avatar, Link, Box } from '@chakra-ui/react';
 
 import NextLink from 'next/link';
-import MainLink from '../../common/MainLink';
-import { LogoAndText, BurgerIcon, MobLogoAndTextIocn } from '../../icons';
-import TabletAndMobileMenu from './menus/TabletAndMobileMenu';
+
+import Heading from '../../common/Heading';
+import Image from 'next/image';
+import CloseAccordionIcon from '../../icons/CloseAccordionIcon';
 
 export const MobileHeader = () => {
-  // const { isOpen, onOpen, onClose } = useDisclosure();
-
-  const [show, setShow] = useState(false);
-
-  const openMenu = () => setShow(true);
-  const closeMenu = () => setShow(false);
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Flex
@@ -21,33 +17,53 @@ export const MobileHeader = () => {
       justifyContent="space-between"
       display={{ base: 'flex', md: 'none' }}
     >
-      {/* <MainLink href="/" display={{ base: 'none', sm: 'block' }}>
-        <LogoAndText />
-      </MainLink>
-      <MainLink href="/" display={{ base: 'block', sm: 'none' }}>
-        <MobLogoAndTextIocn />
-      </MainLink>
-      <Flex
-        ml={{ base: '30px', md: '82px' }}
-        alignItems="center"
-        flexDirection="row"
+      <NextLink href="https://eagle.by">
+        <Flex alignItems="center">
+          <Avatar src="/images/eagle.jpg" />
+          <Heading variant="h4" ml="10px">
+            Eagle
+          </Heading>
+        </Flex>
+      </NextLink>
+      <Image onClick={onOpen} src="/images/burger.gif" height={20} width={20} />
+      <Box
+        position="absolute"
+        display={isOpen ? 'block' : 'none'}
+        bg="white"
+        width="100%"
+        height="100vh"
+        left={0}
+        top={0}
+        zIndex="2147000000 !important"
+        p="20px"
       >
-        <NextLink href={constants.routs.registration}>
-          <Button maxW="144px" w="144px" display={{ base: 'none', sm: 'flex' }}>
-            registration
-          </Button>
-        </NextLink>
-        <MainLink
-          ml="18px"
-          mr="45px"
-          display={{ base: 'none', sm: 'flex' }}
-          href={constants.routs.login}
-        >
-          signIn
-        </MainLink>
-        <BurgerIcon onClick={openMenu} />
-      </Flex>
-      <TabletAndMobileMenu isOpen={show} onClose={closeMenu} /> */}
+        <Flex justifyContent="space-between" alignItems="center">
+          <NextLink href="https://eagle.by">
+            <Flex alignItems="center">
+              <Avatar src="/images/eagle.jpg" />
+              <Heading variant="h4" ml="10px">
+                Eagle
+              </Heading>
+            </Flex>
+          </NextLink>
+          <CloseAccordionIcon onClick={onClose} />
+        </Flex>
+        <Flex flexDirection="column" mt="20px">
+          <Link mr="6px" href={'#uslugi'} onClick={onClose}>
+            Услуги
+          </Link>
+          <Link mr="6px" mt="6px" href={'#jobs'} onClick={onClose}>
+            Работы
+          </Link>
+          <Link mr="6px" mt="6px" href={'#contacts'} onClick={onClose}>
+            Контакты и карта
+          </Link>
+          <Flex mt="20px">
+            <Image src="/images/mobile.svg" width={20} height={20} />
+            <NextLink href={`tel:+375333593275`}>+375 33 359 32 75</NextLink>
+          </Flex>
+        </Flex>
+      </Box>
     </Flex>
   );
 };

@@ -1,6 +1,5 @@
 import { Box, Container, Flex, Text } from '@chakra-ui/react';
 
-import MainLink from '../../common/MainLink';
 import NextLink from 'next/link';
 import {
   FullscreenControl,
@@ -21,10 +20,14 @@ export const Footer = () => {
         pt={{ base: '38px', sm: '55px' }}
         pb={{ base: '21px', sm: '37px' }}
         display="flex"
+        justifyContent="space-between"
         flexDirection={{ base: 'column', sm: 'row' }}
       >
         <Box>
-          <Text mb="10px">Наше место и схема проезда</Text>
+          <Heading id="contacts" mb="10px" variant="h3">
+            Наше место и схема проезда
+          </Heading>
+
           <Box borderRadius="16px" overflow="hidden" w="320px" h="240px">
             <YMaps
               query={{
@@ -70,7 +73,11 @@ export const Footer = () => {
           display="flex"
           flexDirection="column"
           justifyContent="flex-end"
+          fontSize={{ base: '13px', sm: 'initial' }}
         >
+          <Heading id="contacts" mb="10px" variant="h3">
+            Контакты
+          </Heading>
           <Flex mb="10px">
             <Image src="/images/map.png" width={20} height={20} />
             <Text fontWeight={600} ml="10px">

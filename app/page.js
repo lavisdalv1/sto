@@ -15,14 +15,16 @@ import {
   AccordionPanel,
   Text,
 } from '@chakra-ui/react';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import { CloseAccordionIcon, OpenAccordionIcon } from '../components/icons';
 import Heading from '../components/common/Heading';
 // import { gql } from '@apollo/client';
 // import client from '../appoloClient';
-// import Image from 'next/image';
 import { dataPrice } from '../mockData/svarka';
-
+import Slider from 'react-slick';
 import { Montserrat } from '@next/font/google';
+import Image from 'next/image';
 // Georama
 export const myFont = Montserrat({
   weight: '400',
@@ -31,9 +33,68 @@ export const myFont = Montserrat({
 });
 
 export default function Page() {
+  const settings = {
+    infinite: true,
+
+    slidesToShow: 2,
+    slidesToScroll: 2,
+
+    responsive: [
+      {
+        breakpoint: 660,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
+  const stylesPhoto = {
+    position: 'relative',
+    overflow: 'hidden',
+    h: { base: '220px', sm: '500px' },
+    w: '200px',
+  };
+
+  const phohtos = [
+    {
+      photo: 1,
+    },
+    {
+      photo: 2,
+    },
+    {
+      photo: 3,
+    },
+    {
+      photo: 4,
+    },
+    {
+      photo: 5,
+    },
+    {
+      photo: 12,
+    },
+    {
+      photo: 7,
+    },
+    {
+      photo: 8,
+    },
+    {
+      photo: 9,
+    },
+    {
+      photo: 10,
+    },
+    {
+      photo: 11,
+    },
+  ];
   return (
     <Box>
-      <Heading variant="h3" mb={{ base: '15px', sm: '40px' }}>
+      <Heading id="uslugi" variant="h3" mb={{ base: '15px', sm: '40px' }}>
         Наши Услуги
       </Heading>
       <Accordion allowToggle variant="accord">
@@ -91,6 +152,18 @@ export default function Page() {
           </AccordionItem>
         ))}
       </Accordion>
+      <Box mt="20px" mb="30px">
+        <Heading id={'jobs'} variant="h3" mb={{ base: '15px', sm: '40px' }}>
+          Наши работы
+        </Heading>
+        <Slider {...settings}>
+          {phohtos.map(({ photo }) => (
+            <Box {...stylesPhoto}>
+              <Image fill src={`/images/jobs/${photo}.jpg`} />
+            </Box>
+          ))}
+        </Slider>
+      </Box>
     </Box>
   );
 }
