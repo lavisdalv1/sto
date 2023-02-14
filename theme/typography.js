@@ -4,6 +4,7 @@ export const myFont = Montserrat({
   weight: '400',
   style: ['normal', 'italic'],
   weight: ['400', '500'],
+  subsets: ['latin'],
 });
 
 export default {

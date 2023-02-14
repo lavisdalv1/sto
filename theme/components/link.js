@@ -4,7 +4,7 @@ export const LinkStyles = {
     color: 'black',
     fontSize: 'sm',
     _hover: {
-      color: 'blue.blueV1',
+      color: '#aac4ff',
       textDecoration: 'none',
     },
     _focus: {

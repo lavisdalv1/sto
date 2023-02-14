@@ -1,7 +1,7 @@
 import { Text, Box, Flex } from '@chakra-ui/react';
 import Heading from '../../common/Heading';
-import MainLink from '../../common/MainLink';
-import { getSliderIcon } from '../../../utils/getSliderIcon';
+
+// import { getSliderIcon } from '../../../utils/getSliderIcon';
 
 export const Card = ({ title, description, link, color }) => (
   <Box
@@ -17,7 +17,7 @@ export const Card = ({ title, description, link, color }) => (
       borderRadius="50px 50px 0px 0px"
       overflow="hidden"
     >
-      {getSliderIcon(color)}
+      {/* {getSliderIcon(color)} */}
     </Box>
 
     <Box
@@ -37,17 +37,10 @@ export const Card = ({ title, description, link, color }) => (
           // h={{ base: '115px', md: '130px' }}
           // noOfLines={[6, 7]}
           fontSize="sm"
-          color="sub.v2"
+          // color="sub.v2"
         >
           {description}
         </Text>
-      </Box>
-      <Box mt="auto">
-        {link && (
-          <MainLink href={link} arrow>
-            Пример страницы записи
-          </MainLink>
-        )}
       </Box>
     </Box>
   </Box>
