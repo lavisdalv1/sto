@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Flex, useDisclosure, Avatar, Link, Box } from '@chakra-ui/react';
 
 import NextLink from 'next/link';
@@ -17,7 +16,7 @@ export const MobileHeader = () => {
       justifyContent="space-between"
       display={{ base: 'flex', md: 'none' }}
     >
-      <NextLink href="https://eagle.by">
+      <NextLink href="/">
         <Flex alignItems="center">
           <Avatar src="/images/eagle.jpg" />
           <Heading variant="h4" ml="10px">
@@ -38,7 +37,7 @@ export const MobileHeader = () => {
         p="20px"
       >
         <Flex justifyContent="space-between" alignItems="center">
-          <NextLink href="https://eagle.by">
+          <NextLink href="/">
             <Flex alignItems="center">
               <Avatar src="/images/eagle.jpg" />
               <Heading variant="h4" ml="10px">
