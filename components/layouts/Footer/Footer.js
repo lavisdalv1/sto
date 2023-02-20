@@ -72,44 +72,52 @@ export const Footer = () => {
           mt={{ base: '20px', sm: '0px' }}
           display="flex"
           flexDirection="column"
-          justifyContent="flex-end"
+          justifyContent="space-between"
           fontSize={{ base: '13px', sm: 'initial' }}
         >
-          <Heading id="contacts" mb="10px" variant="h3">
-            Контакты
-          </Heading>
-          <Flex mb="10px">
-            <Image src="/images/map.png" width={20} height={20} />
-            <Text fontWeight={600} ml="10px">
-              Адресс:
-            </Text>
-            <NextLink
-              href={`https://yandex.by/maps/155/gomel/?ll=30.945379%2C52.459588&mode=routes&rtext=~52.459973%2C30.944967&rtt=auto&ruri=~&z=18.36`}
-              target="_blank"
-            >
-              г.Гомель Текстильная улица, 10к3
-            </NextLink>
-          </Flex>
-          <Flex mb="10px">
-            <Image src="/images/mobile.svg" width={20} height={20} />
-            <Text fontWeight={600} ml="10px">
-              Телефон:{' '}
-            </Text>
-            <NextLink href={`tel:+375333593275`}>+375 33 359 32 75</NextLink>
-          </Flex>
+          <Box>
+            <Heading id="contacts" mb="10px" variant="h3">
+              Контакты:
+            </Heading>
+            <Flex mb="10px">
+              <Image src="/images/map.png" width={20} height={20} />
+              <Text fontWeight={600} ml="10px">
+                Адресс:
+              </Text>
+              <NextLink
+                href={`https://yandex.by/maps/155/gomel/?ll=30.945379%2C52.459588&mode=routes&rtext=~52.459973%2C30.944967&rtt=auto&ruri=~&z=18.36`}
+                target="_blank"
+              >
+                г.Гомель Текстильная улица, 10к3
+              </NextLink>
+            </Flex>
+            <Flex mb="10px">
+              <Image src="/images/mobile.svg" width={20} height={20} />
+              <Text fontWeight={600} ml="10px">
+                Телефон:{' '}
+              </Text>
+              <NextLink href={`tel:+375333593275`}>+375 33 359 32 75</NextLink>
+            </Flex>
 
-          <Flex mb="10px">
-            <Image src="/images/instagram.svg" width={20} height={20} />
-            <Text fontWeight={600} ml="10px">
-              Instagram:{' '}
-            </Text>
-            <NextLink
-              href={`https://www.instagram.com/eagle_gomel/`}
-              target="_blank"
-            >
-              eagle_gomel
-            </NextLink>
-          </Flex>
+            <Flex mb="10px">
+              <Image src="/images/instagram.svg" width={20} height={20} />
+              <Text fontWeight={600} ml="10px">
+                Instagram:{' '}
+              </Text>
+              <NextLink
+                href={`https://www.instagram.com/eagle_gomel/`}
+                target="_blank"
+              >
+                eagle_gomel
+              </NextLink>
+            </Flex>
+          </Box>
+          <Box>
+            <Heading id="contacts" mb="10px" variant="h3">
+              График работы:
+            </Heading>
+            <Text>- 24/7</Text>
+          </Box>
         </Box>
       </Container>
     </Box>

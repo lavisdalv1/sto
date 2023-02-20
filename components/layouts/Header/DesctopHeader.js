@@ -13,7 +13,7 @@ export const DesctopHeader = () => {
       display={{ base: 'none', md: 'flex' }}
       position="relative"
     >
-      <NextLink href="https://eagle.by">
+      <NextLink href="/">
         <Flex alignItems="center">
           <Avatar src="/images/eagle.jpg" />
           <Heading variant="h4" ml="10px">

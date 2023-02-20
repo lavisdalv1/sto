@@ -14,6 +14,7 @@ import {
   AccordionButton,
   AccordionPanel,
   Text,
+  Flex,
 } from '@chakra-ui/react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -32,12 +33,93 @@ export const myFont = Montserrat({
   weight: ['400', '500'],
 });
 
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <img
+      src="/images/arrow.png"
+      onClick={onClick}
+      className={className}
+      style={{ transform: 'rotate(90deg)' }}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <img
+      src="/images/arrow.png"
+      onClick={onClick}
+      className={className}
+      style={{ transform: 'rotate(270deg)' }}
+    />
+  );
+}
+
+const BannerCard = ({ head }) => (
+  <Box height={{ base: '150px', sm: '350px' }}>
+    <Flex justifyContent="space-between" position="relative">
+      <Box
+        position="absolute"
+        left={{ base: '0px', sm: '80px' }}
+        bg="#000"
+        h="350px"
+        w={{ base: '40px', sm: '100px' }}
+        transform="skew(-20deg)"
+        zIndex={2}
+      />
+      <Box
+        position="absolute"
+        right={{ base: '65px', sm: '80px' }}
+        bg="#000"
+        h="350px"
+        w={{ base: '40px', sm: '100px' }}
+        transform="skew(-20deg)"
+        zIndex={2}
+      />
+      <Flex
+        justifyContent="center"
+        alignItems="center"
+        h={{ base: '150px', sm: '350px' }}
+        w="100%"
+        zIndex={2}
+      >
+        <Heading variant="h3" w={{ base: '100px', sm: 'auto' }}>
+          {head}
+        </Heading>
+      </Flex>
+    </Flex>
+  </Box>
+);
+
 export default function Page() {
   const settings = {
     infinite: true,
 
     slidesToShow: 2,
     slidesToScroll: 2,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+
+    responsive: [
+      {
+        breakpoint: 660,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
+  const settingsBanner = {
+    infinite: true,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
 
     responsive: [
       {
@@ -94,6 +176,14 @@ export default function Page() {
   ];
   return (
     <Box>
+      <Box height={{ base: '150px', sm: '350px' }} m="30px 0 30px 0">
+        <Slider {...settingsBanner}>
+          <BannerCard head="Сварка" />
+          <BannerCard head="Полировка" />
+          <BannerCard head="Окраска" />
+          <BannerCard head="Беспокрасочное удаления вмятин (PDR)" />
+        </Slider>
+      </Box>
       <Heading id="uslugi" variant="h3" mb={{ base: '15px', sm: '40px' }}>
         Наши Услуги
       </Heading>
@@ -131,7 +221,9 @@ export default function Page() {
                       <Tbody>
                         {data.map(({ price, name, takeOffInstall }, index) => (
                           <Tr key={index}>
-                            <Td fontWeight={'500'}>{name}</Td>
+                            <Td fontWeight={'500'}>
+                              <Heading variant="h5">{name}</Heading>
+                            </Td>
                             <Td isNumeric>от {price}</Td>
 
                             {takeOffInstall ? (
