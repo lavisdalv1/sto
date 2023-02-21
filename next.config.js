@@ -1,8 +1,4 @@
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: false,
-});
-
-module.exports = withBundleAnalyzer({
+module.exports = {
   reactStrictMode: true,
   experimental: {
     appDir: true,
@@ -23,4 +19,4 @@ module.exports = withBundleAnalyzer({
   //     },
   //   ],
   // },
-});
+};

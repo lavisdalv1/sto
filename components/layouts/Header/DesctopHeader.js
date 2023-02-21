@@ -33,7 +33,12 @@ export const DesctopHeader = () => {
           Контакты
         </Link>
         <Flex>
-          <Image src="/images/mobile.svg" width={20} height={20} />
+          <Image
+            alt="Мобильный телефон СТО Гомель"
+            src="/images/mobile.svg"
+            width={20}
+            height={20}
+          />
           <NextLink href={`tel:+375333593275`}>+375 33 359 32 75</NextLink>
         </Flex>
       </Flex>

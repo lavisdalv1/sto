@@ -37,6 +37,7 @@ function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <img
+      alt="arrow"
       src="/images/arrow.png"
       onClick={onClick}
       className={className}
@@ -49,6 +50,7 @@ function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
     <img
+      alt="arrow"
       src="/images/arrow.png"
       onClick={onClick}
       className={className}
@@ -251,7 +253,7 @@ export default function Page() {
         <Slider {...settings}>
           {phohtos.map(({ photo }) => (
             <Box {...stylesPhoto}>
-              <Image fill src={`/images/jobs/${photo}.jpg`} />
+              <Image alt="Наша работа" fill src={`/images/jobs/${photo}.jpg`} />
             </Box>
           ))}
         </Slider>
