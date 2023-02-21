@@ -18,7 +18,7 @@ export const MobileHeader = () => {
     >
       <NextLink href="/">
         <Flex alignItems="center">
-          <Avatar src="/images/eagle.jpg" />
+          <Avatar alt="СТО и Автосервис Гомель" src="/images/eagle.jpg" />
           <Heading variant="h4" ml="10px">
             Eagle
           </Heading>
@@ -39,7 +39,7 @@ export const MobileHeader = () => {
         <Flex justifyContent="space-between" alignItems="center">
           <NextLink href="/">
             <Flex alignItems="center">
-              <Avatar src="/images/eagle.jpg" />
+              <Avatar alt="СТО и Автосервис Гомель" src="/images/eagle.jpg" />
               <Heading variant="h4" ml="10px">
                 Eagle
               </Heading>
@@ -58,7 +58,12 @@ export const MobileHeader = () => {
             Контакты и карта
           </Link>
           <Flex mt="20px">
-            <Image src="/images/mobile.svg" width={20} height={20} />
+            <Image
+              alt="Мобильный телефон СТО Гомель"
+              src="/images/mobile.svg"
+              width={20}
+              height={20}
+            />
             <NextLink href={`tel:+375333593275`}>+375 33 359 32 75</NextLink>
           </Flex>
         </Flex>
